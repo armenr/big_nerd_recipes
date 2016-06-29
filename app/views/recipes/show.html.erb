@@ -2,6 +2,8 @@
 <p><%= @recipe.description %></p>
 <p>Preparation time: <%= @recipe.preparation_time %> minutes</p>
 <p>Servings yielded: <%= @recipe.servings_yielded %></p>
+  <p><%= @recipe.likes %> Likes</p>
+  (<%= link_to 'Like This', like_recipe_path(@recipe), method: :patch %>)
 
 <h2>Ingredients</h2>
 
