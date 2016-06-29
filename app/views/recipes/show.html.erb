@@ -2,3 +2,13 @@
 <p><%= @recipe.description %></p>
 <p>Preparation time: <%= @recipe.preparation_time %> minutes</p>
 <p>Servings yielded: <%= @recipe.servings_yielded %></p>
+
+<h2>Ingredients</h2>
+
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+      <li>
+        <%= ingredient.amount %> <%= ingredient.unit %> <%= ingredient.name %>
+      </li>
+  <% end %>
+</ul>
