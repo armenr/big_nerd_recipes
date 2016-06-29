@@ -15,7 +15,11 @@
       <tr>
         <td><%= recipe.name %></td>
         <td><%= recipe.description %></td>
-        <td><%= link_to 'show', recipe %></td>
+        <td>
+          <%= link_to 'show', recipe %>
+          <%= link_to 'edit', edit_recipe_path(recipe) %>
+          <%= link_to 'delete', recipe, method: :delete %>
+        </td>
       </tr>
   <% end %>
   </tbody>
