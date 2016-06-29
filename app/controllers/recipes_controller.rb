@@ -12,8 +12,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipes_params = params.require(:recipe).permit(
-      :name, :description, :preparation_time, :servings_yielded)
     @recipe = Recipe.new(recipes_params)
 
     if @recipe.save
@@ -21,6 +19,16 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+
+    def recipe_params
+      params.require(:recipe).permit(
+                                 :name,
+                                 :description,
+                                 :preparation_time,
+                                 :servings_yielded
+      )
+    end
+
   end
 
 end
