@@ -35,13 +35,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  def destroy
-    @recipe = Recipe.find(params[:id])
-
-    @recipe.destroy
-    redirect_to recipes_path
-  end
-
   def like
     recipe = Recipe.find(params[:id])
 

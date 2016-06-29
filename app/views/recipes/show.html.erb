@@ -4,6 +4,7 @@
 <p>Servings yielded: <%= @recipe.servings_yielded %></p>
   <p><%= @recipe.likes %> Likes</p>
   (<%= link_to 'Like This', like_recipe_path(@recipe), method: :patch %>)
+  <%= link_to 'permalink', permalink_path(@recipe.shortcode) %>
 
 <h2>Ingredients</h2>
 
