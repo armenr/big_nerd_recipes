@@ -9,6 +9,13 @@
   <% @recipe.ingredients.each do |ingredient| %>
       <li>
         <%= ingredient.amount %> <%= ingredient.unit %> <%= ingredient.name %>
+        <small>
+          <%= link_to 'remove', recipe_ingredient_path(@recipe, ingredient), method: :delete %>
+          <%= link_to 'edit', edit_recipe_ingredient_path(@recipe, ingredient) %>
+        </small>
       </li>
   <% end %>
 </ul>
+
+<%= link_to 'Add new ingredient', new_recipe_ingredient_path(@recipe) %>
+<%= link_to 'Go Back Home', recipes_path(@recipes) %>
